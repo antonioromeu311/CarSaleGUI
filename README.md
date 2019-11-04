@@ -3,4 +3,6 @@
 
 I added the tax rates for all fifty states and initialized all the car makes and models, all that is left is to add the values for each car. After that just do the math to calculate it out, and tidy up the GUI. Also I am thinking of adding a depreciation calulator to this, using a negative compound interest formula. Also still haven't figured out the arrays on the combobox but I feel like at this point it's a little too late.
 
+I added the values for the cars and prices in general now.
+
 Comments or suggestions to antonio.r.romeu@gmail.com
