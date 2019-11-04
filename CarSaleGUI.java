@@ -186,26 +186,30 @@ public class CarSaleGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+        private void CBchange() {
+            ComboBoxModel.removeAllItems();
+            ComboBoxModel.addItem("Select");
+            ComboBoxModel.addItem(car1);
+            ComboBoxModel.addItem(car2);
+            ComboBoxModel.addItem(car3);
+        }
     private void ComboBoxMakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxMakeActionPerformed
         // TODO add your handling code here:
         if (ComboBoxMake.getSelectedItem()== "Honda") {
-            ComboBoxModel.removeAllItems();
-            ComboBoxModel.addItem("Select");            
-            ComboBoxModel.addItem("Accord");
-            ComboBoxModel.addItem("Civic");
-            ComboBoxModel.addItem("CRV"); }
+            car1 = "Accord";
+            car2 = "Civic";
+            car3 = "CRV";
+            CBchange(); }
         if (ComboBoxMake.getSelectedItem() == "Toyota") {
-            ComboBoxModel.removeAllItems();
-            ComboBoxModel.addItem("Select");            
-            ComboBoxModel.addItem("Corolla");
-            ComboBoxModel.addItem("Rav4");
-            ComboBoxModel.addItem("Tundra");}
+            car1 = "Corolla";
+            car2 = "Rav4";
+            car3 = "Tundra";
+            CBchange(); }
         if (ComboBoxMake.getSelectedItem() == "Tesla") {
-            ComboBoxModel.removeAllItems();
-            ComboBoxModel.addItem("Select");                        
-            ComboBoxModel.addItem("Model 3");
-            ComboBoxModel.addItem("Model S");
-            ComboBoxModel.addItem("Model X"); }
+            car1 = "Model 3";
+            car2 = "Model S";
+            car3 = "Model X";
+            CBchange();}
         make = ComboBoxMake.getSelectedItem().toString();
         if (make.equalsIgnoreCase("Select")) {
             txtAreaReceipt.setText(""); }
@@ -223,7 +227,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
         else if (model.equalsIgnoreCase("Select")) {
             txtAreaReceipt.setText(make); SliderYear.setMinimum(2015); SliderYear.setMaximum(2020);}
         else {
-            txtAreaReceipt.setText(make + "\n" + model); 
+            txtAreaReceipt.setText(make + " " + model); 
             SliderYear.setMaximum(2020);
             SliderYear.setMinimum(2015);} 
     }//GEN-LAST:event_ComboBoxModelActionPerformed
@@ -279,7 +283,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
         else if (model.equalsIgnoreCase("model s") && year == 2017) { price = ModelS2017; }
         else if (model.equalsIgnoreCase("model s") && year == 2016) { price = ModelS2016; }
         else if (model.equalsIgnoreCase("model s") && year == 2015) { price = ModelS2015; }
-        txtAreaReceipt.setText(make + "\n" + model + "\n" + year + "\n" + price); 
+        txtAreaReceipt.setText(make + " " + model + "\n" + year + "\n" + "Before Tax: $" + (int)price); 
 
     }//GEN-LAST:event_SliderYearMouseReleased
 
@@ -337,7 +341,10 @@ public class CarSaleGUI extends javax.swing.JFrame {
         else if (state.equalsIgnoreCase("wisconsin")) { stateTax = wisconsin; }
         else if (state.equalsIgnoreCase("wyoming")) { stateTax = wyoming; }
         else if (state.equalsIgnoreCase("washington DC")) { stateTax = washingtonDC; }
-        txtAreaReceipt.setText(make + "\n" + model + "\n" + year + "\n" + "Price of car: " + "Price of car: " + price + "\n" + state + "\nTax Rate: " + (Math.round((stateTax * 100.0) * 100.0) / 100.0) + "%");
+        tax = (Math.round((stateTax * price) * 100.0) / 100.0);
+        total = (Math.round((price + tax) * 100.0) / 100.0);
+        txtAreaReceipt.setText(make + " " + model + "\n" + year + "\n" + "Before Tax: $" + (int)price + "\nState: " + state + "\nTax Rate: " + 
+                (Math.round((stateTax * 100.0) * 100.0) / 100.0) + "%\nTax: $" + tax + "\nTotal: $" + total);
     }//GEN-LAST:event_ComboBoxStateActionPerformed
 
     
@@ -375,9 +382,12 @@ public class CarSaleGUI extends javax.swing.JFrame {
             }
         });
     }
+    String car1 = " ";
+    String car2 = " ";
+    String car3 = " ";
     String make,model,state;
     int year;
-    double stateTax,total,price;
+    double stateTax,total,price,tax;
     //CAR PRICE DECLARATIONS
     double Civic2020 = 20950.0; //HONDA - CIVICS
     double Civic2019 = 19550.0;
