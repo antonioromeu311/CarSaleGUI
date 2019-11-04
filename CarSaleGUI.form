@@ -43,64 +43,73 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="364" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="LabelTitle" min="-2" pref="300" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="336" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="146" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="LabelMakeSelection" min="-2" pref="200" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelModel" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="LabelModel" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="LabelMakeSelection" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="ComboBoxModel" max="32767" attributes="0"/>
-                              <Component id="ComboBoxMake" pref="150" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="ComboBoxModel" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="ComboBoxMake" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Component id="SliderYear" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="SliderYear" min="-2" pref="500" max="-2" attributes="0"/>
+                          <Component id="LabelState" min="-2" pref="200" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jComboBox1" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="476" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="LabelTitle" min="-2" pref="75" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelMakeSelection" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
-                      <Component id="ComboBoxMake" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="LabelTitle" min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel1" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelModel" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
-                      <Component id="ComboBoxModel" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="LabelMakeSelection" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="ComboBoxMake" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="LabelModel" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="ComboBoxModel" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                          <Component id="SliderYear" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jComboBox1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="LabelState" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="78" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                  <Component id="SliderYear" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="119" max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -109,7 +118,7 @@
         <Component class="javax.swing.JLabel" name="LabelTitle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="48" style="3"/>
+              <Font name="Dialog" size="52" style="3"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
@@ -120,6 +129,9 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="ComboBoxMake">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="18" style="1"/>
+            </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
                 <StringItem index="0" value="Select"/>
@@ -154,6 +166,9 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="ComboBoxModel">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="18" style="1"/>
+            </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="1">
                 <StringItem index="0" value="Select"/>
@@ -187,7 +202,7 @@
           <Properties>
             <Property name="majorTickSpacing" type="int" value="1"/>
             <Property name="maximum" type="int" value="2020"/>
-            <Property name="minimum" type="int" value="2010"/>
+            <Property name="minimum" type="int" value="2015"/>
             <Property name="paintLabels" type="boolean" value="true"/>
             <Property name="paintTicks" type="boolean" value="true"/>
             <Property name="snapToTicks" type="boolean" value="true"/>
@@ -207,18 +222,96 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="txtAreaSummary">
+            <Component class="javax.swing.JTextArea" name="txtAreaReceipt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
-                <Property name="rows" type="int" value="5"/>
+                <Property name="rows" type="int" value="50"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="You have selected:"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="18" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Receipt"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="18" style="1"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="51">
+                <StringItem index="0" value="Select"/>
+                <StringItem index="1" value="Alabama"/>
+                <StringItem index="2" value="Alaska"/>
+                <StringItem index="3" value="Arizona"/>
+                <StringItem index="4" value="Arkansas"/>
+                <StringItem index="5" value="California"/>
+                <StringItem index="6" value="Colorado"/>
+                <StringItem index="7" value="Connecticut"/>
+                <StringItem index="8" value="Delaware"/>
+                <StringItem index="9" value="Florida"/>
+                <StringItem index="10" value="Georgia"/>
+                <StringItem index="11" value="Hawaii"/>
+                <StringItem index="12" value="Idaho"/>
+                <StringItem index="13" value="Illinois"/>
+                <StringItem index="14" value="Indiana"/>
+                <StringItem index="15" value="Iowa"/>
+                <StringItem index="16" value="Kansas"/>
+                <StringItem index="17" value="Kentucky"/>
+                <StringItem index="18" value="Louisiana"/>
+                <StringItem index="19" value="Maine"/>
+                <StringItem index="20" value="Maryland"/>
+                <StringItem index="21" value="Massachusetts"/>
+                <StringItem index="22" value="Michigan"/>
+                <StringItem index="23" value="Minnesota"/>
+                <StringItem index="24" value="Mississippi"/>
+                <StringItem index="25" value="Missouri"/>
+                <StringItem index="26" value="Montana"/>
+                <StringItem index="27" value="Nebraska"/>
+                <StringItem index="28" value="Nevada"/>
+                <StringItem index="29" value="New Hampshire"/>
+                <StringItem index="30" value="New Jersey"/>
+                <StringItem index="31" value="New Mexico"/>
+                <StringItem index="32" value="New York"/>
+                <StringItem index="33" value="North Carolina"/>
+                <StringItem index="34" value="North Dakota"/>
+                <StringItem index="35" value="Ohio"/>
+                <StringItem index="36" value="Oklahoma"/>
+                <StringItem index="37" value="Oregon"/>
+                <StringItem index="38" value="Pennsylvania"/>
+                <StringItem index="39" value="Rhode Island"/>
+                <StringItem index="40" value="South Carolina"/>
+                <StringItem index="41" value="South Dakota"/>
+                <StringItem index="42" value="Tennessee"/>
+                <StringItem index="43" value="Texas"/>
+                <StringItem index="44" value="Utah"/>
+                <StringItem index="45" value="Vermont"/>
+                <StringItem index="46" value="Virginia"/>
+                <StringItem index="47" value="Washington"/>
+                <StringItem index="48" value="West Virginia"/>
+                <StringItem index="49" value="Wisconsin"/>
+                <StringItem index="50" value="Wyoming"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelState">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="24" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="State Selection"/>
           </Properties>
         </Component>
       </SubComponents>
