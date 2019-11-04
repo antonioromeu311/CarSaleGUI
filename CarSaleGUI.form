@@ -246,7 +246,7 @@
               <Font name="Dialog" size="18" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="51">
+              <StringArray count="52">
                 <StringItem index="0" value="Select"/>
                 <StringItem index="1" value="Alabama"/>
                 <StringItem index="2" value="Alaska"/>
@@ -298,6 +298,7 @@
                 <StringItem index="48" value="West Virginia"/>
                 <StringItem index="49" value="Wisconsin"/>
                 <StringItem index="50" value="Wyoming"/>
+                <StringItem index="51" value="Washington DC"/>
               </StringArray>
             </Property>
           </Properties>

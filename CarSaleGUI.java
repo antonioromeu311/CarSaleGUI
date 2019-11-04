@@ -101,7 +101,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
         jLabel1.setText("Receipt");
 
         jComboBox1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", "Washington DC" }));
 
         LabelState.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         LabelState.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -200,16 +200,23 @@ public class CarSaleGUI extends javax.swing.JFrame {
             ComboBoxModel.addItem("Model S");
             ComboBoxModel.addItem("Model X"); }
         make = ComboBoxMake.getSelectedItem().toString();
-        txtAreaReceipt.setText(make);
+        if (make.equalsIgnoreCase("Select")) {
+            txtAreaReceipt.setText(""); }
+        else {
+            txtAreaReceipt.setText(make); }
     }//GEN-LAST:event_ComboBoxMakeActionPerformed
     
     private void ComboBoxModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxModelActionPerformed
         // TODO add your handling code here: 
         model = ComboBoxModel.getSelectedItem().toString(); 
         if (model.equalsIgnoreCase("Model 3")) {
-            SliderYear.setMinimum(2017);
-        }
-        txtAreaReceipt.setText(make + "\n" + model);
+            SliderYear.setMinimum(2017);}
+        else {
+            SliderYear.setMinimum(2015);} 
+        if (model.equalsIgnoreCase("Select")) {
+            txtAreaReceipt.setText(make); }
+        else {
+            txtAreaReceipt.setText(make + "\n" + model); } 
     }//GEN-LAST:event_ComboBoxModelActionPerformed
 
     private void SliderYearMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SliderYearMouseReleased
@@ -313,56 +320,57 @@ public class CarSaleGUI extends javax.swing.JFrame {
     double ModelX2016;
     double ModelX2015;
     //STATE TAX RATE DECLARATIONS 
-    double alabama;     //A
-    double alaska;
-    double arizona;
-    double arkansas;
-    double california;  //C
-    double colorado;
-    double connecticut;
-    double delaware;    //D
-    double florida;     //F
-    double georgia;     //G
-    double hawaii;      //H
-    double idaho;       //I
-    double illinois;
-    double indiana;
-    double iowa;
-    double kansas;      //K
-    double kentucky;
-    double louisiana;   //L
-    double maine;       //M
-    double maryland;
-    double massachusetts;
-    double michigan;
-    double minnesota;
-    double mississippi;
-    double missouri;
-    double montana;
-    double nebraska;    //N
-    double nevada;
-    double newHampshire;
-    double newJersey;
-    double newMexico;
-    double newYork;
-    double northCarolina;
-    double northDakota;
-    double ohio;        //O
-    double oklahoma;
-    double oregon;
-    double pennsylvania;//P
-    double rhodeIsland; //R
-    double southCarolina;//S
-    double southDakota;
-    double tennessee;   //T
-    double texas;
-    double utah;        //U
-    double vermont;     //V
-    double virginia;
-    double washington;  //W
-    double westVirginia;
-    double wisconsin;
-    double wyoming;
+    double alabama = 0.0914;             //A
+    double alaska = 0.0143;
+    double arizona = 0.0837;
+    double arkansas = 0.0943;
+    double california = 0.0856;          //C
+    double colorado = 0.0763;
+    double connecticut = 0.0635;
+    double delaware = 1.0;               //D
+    double florida = 0.0705;             //F
+    double georgia = 0.0729;             //G
+    double hawaii = 0.0441;              //H
+    double idaho = 0.0603;               //I
+    double illinois = 0.0874;
+    double indiana = 0.07;
+    double iowa = 0.0682;
+    double kansas = 0.0867;              //K
+    double kentucky = 0.06;
+    double louisiana = 0.0945;           //L
+    double maine = 0.055;                //M
+    double maryland = 0.06;
+    double massachusetts = 0.0625;
+    double michigan = 0.06;
+    double minnesota = 0.0743;
+    double mississippi = 0.0707;
+    double missouri = 0.0813;
+    double montana = 1.0;
+    double nebraska = 0.0685;            //N
+    double nevada = 0.0814;
+    double newHampshire = 1.0;
+    double newJersey = 0.066;
+    double newMexico = 0.0782;
+    double newYork = 0.0849;
+    double northCarolina = 0.0697;
+    double northDakota = 0.0685;
+    double ohio = 0.0717;                //O
+    double oklahoma = 0.0892;
+    double oregon = 1.0;
+    double pennsylvania = 0.0634;        //P
+    double rhodeIsland = 0.07;           //R
+    double southCarolina = 0.0743;       //S
+    double southDakota = 0.0640;
+    double tennessee = 0.0947;           //T
+    double texas = 0.0819;
+    double utah = 0.0694;                //U
+    double vermont = 0.0618;             //V
+    double virginia = 0.0565;
+    double washington = 0.0917;          //W
+    double westVirginia = 0.0639;
+    double wisconsin = 0.0544;
+    double wyoming = 0.0536;
+    double washingtonDC = 0.06;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxMake;
     private javax.swing.JComboBox<String> ComboBoxModel;
