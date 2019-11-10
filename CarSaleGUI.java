@@ -1,3 +1,7 @@
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -42,7 +46,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LabelTitle.setFont(new java.awt.Font("Dialog", 3, 52)); // NOI18N
+        LabelTitle.setFont(new java.awt.Font("DialogInput", 3, 58)); // NOI18N
         LabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelTitle.setLabelFor(this);
         LabelTitle.setText("CAR SALE");
@@ -95,15 +99,17 @@ public class CarSaleGUI extends javax.swing.JFrame {
         txtAreaReceipt.setColumns(20);
         txtAreaReceipt.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
         txtAreaReceipt.setLineWrap(true);
-        txtAreaReceipt.setRows(7);
+        txtAreaReceipt.setRows(10);
+        txtAreaReceipt.setToolTipText("Have fun with your new car!");
         jScrollPane1.setViewportView(txtAreaReceipt);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Receipt");
 
         ComboBoxState.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         ComboBoxState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", "Washington DC" }));
+        ComboBoxState.setToolTipText("If year was changed AFTER state selection, please reselect the state");
         ComboBoxState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboBoxStateActionPerformed(evt);
@@ -119,40 +125,40 @@ public class CarSaleGUI extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(163, 163, 163))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelModel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelMakeSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ComboBoxModel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ComboBoxMake, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(SliderYear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(LabelState, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ComboBoxState, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(LabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(214, 214, 214)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LabelModel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LabelMakeSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ComboBoxModel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ComboBoxMake, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(SliderYear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(LabelState, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ComboBoxState, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1476, Short.MAX_VALUE)))
+                .addGap(12, 12, 12))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(LabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(LabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -168,8 +174,8 @@ public class CarSaleGUI extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ComboBoxState, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LabelState, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(78, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addContainerGap(480, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,35 +192,161 @@ public class CarSaleGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-        private void CBchange() {
-            ComboBoxModel.removeAllItems();
-            ComboBoxModel.addItem("Select");
-            ComboBoxModel.addItem(car1);
-            ComboBoxModel.addItem(car2);
-            ComboBoxModel.addItem(car3);
+    private void CBchange() {
+        ComboBoxModel.removeAllItems();
+        ComboBoxModel.addItem("Select");
+        ComboBoxModel.addItem(car1);
+        ComboBoxModel.addItem(car2);
+        ComboBoxModel.addItem(car3);
         }
-    private void ComboBoxMakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxMakeActionPerformed
-        // TODO add your handling code here:
-        if (ComboBoxMake.getSelectedItem()== "Honda") {
+    private void CBstate(){
+        state = ComboBoxState.getSelectedItem().toString();
+        if (state.equalsIgnoreCase("Alabama")) { stateTax = alabama; }
+        if (state.equalsIgnoreCase("alaska")) { stateTax = alaska; }
+        if (state.equalsIgnoreCase("arizona")) { stateTax = arizona; }
+        if (state.equalsIgnoreCase("arkansas")) { stateTax = arkansas; }
+        if (state.equalsIgnoreCase("california")) { stateTax = california; }
+        if (state.equalsIgnoreCase("colorado")) { stateTax = colorado; }
+        if (state.equalsIgnoreCase("connecticut")) { stateTax = connecticut; }
+        if (state.equalsIgnoreCase("delaware")) { stateTax = delaware; }
+        if (state.equalsIgnoreCase("florida")) { stateTax = florida; }
+        if (state.equalsIgnoreCase("georgia")) { stateTax = georgia; }
+        if (state.equalsIgnoreCase("hawaii")) { stateTax = hawaii; }
+        if (state.equalsIgnoreCase("idaho")) { stateTax = idaho; }
+        if (state.equalsIgnoreCase("illinois")) { stateTax = illinois; }
+        if (state.equalsIgnoreCase("indiana")) { stateTax = indiana; }
+        if (state.equalsIgnoreCase("iowa")) { stateTax = iowa; }
+        if (state.equalsIgnoreCase("kansas")) { stateTax = kansas; }
+        if (state.equalsIgnoreCase("kentucky")) { stateTax = kentucky; }
+        if (state.equalsIgnoreCase("louisiana")) { stateTax = louisiana; }
+        if (state.equalsIgnoreCase("main")) { stateTax = maine; }
+        if (state.equalsIgnoreCase("maryland")) { stateTax = maryland; }
+        if (state.equalsIgnoreCase("massachusetts")) { stateTax = massachusetts; }
+        if (state.equalsIgnoreCase("michigan")) { stateTax = michigan; }
+        if (state.equalsIgnoreCase("minnesota")) { stateTax = minnesota; }
+        if (state.equalsIgnoreCase("mississippi")) { stateTax = mississippi; }
+        if (state.equalsIgnoreCase("missouri")) { stateTax = missouri; }
+        if (state.equalsIgnoreCase("montana")) { stateTax = montana; }
+        if (state.equalsIgnoreCase("nebraska")) { stateTax = nebraska; }
+        if (state.equalsIgnoreCase("nevada")) { stateTax = nevada; }
+        if (state.equalsIgnoreCase("newHampshire")) { stateTax = newHampshire; }
+        if (state.equalsIgnoreCase("newJersey")) { stateTax = newJersey; }
+        if (state.equalsIgnoreCase("newMexico")) { stateTax = newMexico; }
+        if (state.equalsIgnoreCase("newYork")) { stateTax = newYork; }
+        if (state.equalsIgnoreCase("northCarolina")) { stateTax = northCarolina; }
+        if (state.equalsIgnoreCase("northDakota")) { stateTax = northDakota; }
+        if (state.equalsIgnoreCase("ohio")) { stateTax = ohio; }
+        if (state.equalsIgnoreCase("oklahoma")) { stateTax = oklahoma; }
+        if (state.equalsIgnoreCase("oregon")) { stateTax = oregon; }
+        if (state.equalsIgnoreCase("pennsylvania")) { stateTax = pennsylvania; }
+        if (state.equalsIgnoreCase("rhodeIsland")) { stateTax = rhodeIsland; }
+        if (state.equalsIgnoreCase("southCarolina")) { stateTax = southCarolina; }
+        if (state.equalsIgnoreCase("southDakota")) { stateTax = southDakota; }
+        if (state.equalsIgnoreCase("tennessee")) { stateTax = tennessee; }
+        if (state.equalsIgnoreCase("texas")) { stateTax = texas; }
+        if (state.equalsIgnoreCase("utah")) { stateTax = utah; }
+        if (state.equalsIgnoreCase("vermont")) { stateTax = vermont; }
+        if (state.equalsIgnoreCase("virginia")) { stateTax = virginia; }
+        if (state.equalsIgnoreCase("washington")) { stateTax = washington; }
+        if (state.equalsIgnoreCase("westVirginia")) { stateTax = westVirginia; }
+        if (state.equalsIgnoreCase("wisconsin")) { stateTax = wisconsin; }
+        if (state.equalsIgnoreCase("wyoming")) { stateTax = wyoming; }
+        if (state.equalsIgnoreCase("washington DC")) { stateTax = washingtonDC; }
+        if (state.equalsIgnoreCase("Select")) {txtAreaReceipt.setText(make + " " + model + "\n" + year);  }
+        tax = (Math.round((stateTax * price) * 100.0) / 100.0);
+        total = (Math.round((price + tax) * 100.0) / 100.0);
+        if (state.equalsIgnoreCase("massachusetts") || stateTax == washingtonDC || stateTax == newHampshire) {
+            txtAreaReceipt.setText(make + " " + model + "\n" + year + "\n" + "Before Tax: $" + (int)price + "\nState:\n" + state + "\nTax Rate: " + 
+                (Math.round((stateTax * 100.0) * 100.0) / 100.0) + "% \nTax: $" + tax + "\nTotal: $" + total);
+        }
+        txtAreaReceipt.setText(make + " " + model + "\n" + year + "\n" + "Before Tax: $" + (int)price + "\nState: " + state + "\nTax Rate: " + 
+                (Math.round((stateTax * 100.0) * 100.0) / 100.0) + "%\nTax: $" + tax + "\nTotal: $" + total);
+        }
+    private void CBmodel()  {
+        make = ComboBoxMake.getSelectedItem().toString();
+        if (make.equalsIgnoreCase("Honda")) {
             car1 = "Accord";
             car2 = "Civic";
             car3 = "CRV";
             CBchange(); }
-        if (ComboBoxMake.getSelectedItem() == "Toyota") {
+        if (make.equalsIgnoreCase("Toyota")) {
             car1 = "Corolla";
             car2 = "Rav4";
             car3 = "Tundra";
             CBchange(); }
-        if (ComboBoxMake.getSelectedItem() == "Tesla") {
+        if (make.equalsIgnoreCase("Tesla")) {
             car1 = "Model 3";
             car2 = "Model S";
             car3 = "Model X";
             CBchange();}
-        make = ComboBoxMake.getSelectedItem().toString();
         if (make.equalsIgnoreCase("Select")) {
             txtAreaReceipt.setText(""); }
         else {
             txtAreaReceipt.setText(make); }
+        }
+    private void YearSlide(){
+        year = SliderYear.getValue();
+        if (make == null || model == null) {
+            txtAreaReceipt.setText("");
+        }
+        if (model.equalsIgnoreCase("Civic") && year == 2020) { price = Civic2020; }
+        if (model.equalsIgnoreCase("Civic") && year == 2019) { price = Civic2019; }
+        if (model.equalsIgnoreCase("Civic") && year == 2018) { price = Civic2018; }
+        if (model.equalsIgnoreCase("Civic") && year == 2017) { price = Civic2017; }
+        if (model.equalsIgnoreCase("Civic") && year == 2016) { price = Civic2016; }
+        if (model.equalsIgnoreCase("Civic") && year == 2015) { price = Civic2015; }
+        if (model.equalsIgnoreCase("Accord") && year == 2020) { price = Accord2020; }
+        if (model.equalsIgnoreCase("Accord") && year == 2019) { price = Accord2019; }
+        if (model.equalsIgnoreCase("Accord") && year == 2018) { price = Accord2018; }
+        if (model.equalsIgnoreCase("Accord") && year == 2017) { price = Accord2017; }
+        if (model.equalsIgnoreCase("Accord") && year == 2016) { price = Accord2016; }
+        if (model.equalsIgnoreCase("Accord") && year == 2015) { price = Accord2015; }
+        if (model.equalsIgnoreCase("crv") && year == 2020) { price = CRV2020; }
+        if (model.equalsIgnoreCase("crv") && year == 2019) { price = CRV2019; }
+        if (model.equalsIgnoreCase("crv") && year == 2018) { price = CRV2018; }
+        if (model.equalsIgnoreCase("crv") && year == 2017) { price = CRV2017; }
+        if (model.equalsIgnoreCase("crv") && year == 2016) { price = CRV2016; }
+        if (model.equalsIgnoreCase("crv") && year == 2015) { price = CRV2015; }
+        if (model.equalsIgnoreCase("corolla") && year == 2020) { price = Corolla2020; }
+        if (model.equalsIgnoreCase("corolla") && year == 2019) { price = Corolla2019; }
+        if (model.equalsIgnoreCase("corolla") && year == 2018) { price = Corolla2018; }
+        if (model.equalsIgnoreCase("corolla") && year == 2017) { price = Corolla2017; }
+        if (model.equalsIgnoreCase("corolla") && year == 2016) { price = Corolla2016; }
+        if (model.equalsIgnoreCase("corolla") && year == 2015) { price = Corolla2015; }
+        if (model.equalsIgnoreCase("rav4") && year == 2020) { price = Rav42020; }
+        if (model.equalsIgnoreCase("rav4") && year == 2019) { price = Rav42019; }
+        if (model.equalsIgnoreCase("rav4") && year == 2018) { price = Rav42018; }
+        if (model.equalsIgnoreCase("rav4") && year == 2017) { price = Rav42017; }
+        if (model.equalsIgnoreCase("rav4") && year == 2016) { price = Rav42016; }
+        if (model.equalsIgnoreCase("rav4") && year == 2015) { price = Rav42015; }
+        if (model.equalsIgnoreCase("tundra") && year == 2020) { price = Tundra2020; }
+        if (model.equalsIgnoreCase("tundra") && year == 2019) { price = Tundra2019; }
+        if (model.equalsIgnoreCase("tundra") && year == 2018) { price = Tundra2018; }
+        if (model.equalsIgnoreCase("tundra") && year == 2017) { price = Tundra2017; }
+        if (model.equalsIgnoreCase("tundra") && year == 2016) { price = Tundra2016; }
+        if (model.equalsIgnoreCase("tundra") && year == 2015) { price = Tundra2015; }
+        if (model.equalsIgnoreCase("model 3") && year == 2020) { price = Model32020; }
+        if (model.equalsIgnoreCase("model 3") && year == 2019) { price = Model32019; }
+        if (model.equalsIgnoreCase("model 3") && year == 2018) { price = Model32018; }
+        if (model.equalsIgnoreCase("model 3") && year == 2017) { price = Model32017; }
+        if (model.equalsIgnoreCase("model s") && year == 2019) { price = ModelS2019; }
+        if (model.equalsIgnoreCase("model s") && year == 2018) { price = ModelS2018; }
+        if (model.equalsIgnoreCase("model s") && year == 2017) { price = ModelS2017; }
+        if (model.equalsIgnoreCase("model s") && year == 2016) { price = ModelS2016; }
+        if (model.equalsIgnoreCase("model s") && year == 2015) { price = ModelS2015; }
+        if (model.equalsIgnoreCase("model x") && year == 2020) { price = ModelX2020; }
+        if (model.equalsIgnoreCase("model x") && year == 2019) { price = ModelX2019; }
+        if (model.equalsIgnoreCase("model x") && year == 2018) { price = ModelX2018; }
+        if (model.equalsIgnoreCase("model x") && year == 2020) { price = ModelX2017; }
+        if (model.equalsIgnoreCase("model x") && year == 2016) { price = ModelX2016; }
+        txtAreaReceipt.setText(make + " " + model + "\n" + year + "\n" + "Before Tax: $" + (int)price); 
+        if (ComboBoxState.getSelectedItem() != null || ComboBoxState.getSelectedItem().toString().equalsIgnoreCase("Select") == false) {
+            CBstate();
+        }
+    }
+    private void ComboBoxMakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxMakeActionPerformed
+        // TODO add your handling code here:
+        CBmodel();
     }//GEN-LAST:event_ComboBoxMakeActionPerformed
     
     private void ComboBoxModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxModelActionPerformed
@@ -234,119 +366,74 @@ public class CarSaleGUI extends javax.swing.JFrame {
 
     private void SliderYearMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SliderYearMouseReleased
         // TODO add your handling code here:
+        YearSlide();
+        /**
         year = SliderYear.getValue();
         if (make == null || model == null) {
             txtAreaReceipt.setText("");
         }
         if (model.equalsIgnoreCase("Civic") && year == 2020) { price = Civic2020; }
-        else if (model.equalsIgnoreCase("Civic") && year == 2019) { price = Civic2019; }
-        else if (model.equalsIgnoreCase("Civic") && year == 2018) { price = Civic2018; }
-        else if (model.equalsIgnoreCase("Civic") && year == 2017) { price = Civic2017; }
-        else if (model.equalsIgnoreCase("Civic") && year == 2016) { price = Civic2016; }
-        else if (model.equalsIgnoreCase("Civic") && year == 2015) { price = Civic2015; }
-        else if (model.equalsIgnoreCase("Accord") && year == 2020) { price = Accord2020; }
-        else if (model.equalsIgnoreCase("Accord") && year == 2019) { price = Accord2019; }
-        else if (model.equalsIgnoreCase("Accord") && year == 2018) { price = Accord2018; }
-        else if (model.equalsIgnoreCase("Accord") && year == 2017) { price = Accord2017; }
-        else if (model.equalsIgnoreCase("Accord") && year == 2016) { price = Accord2016; }
-        else if (model.equalsIgnoreCase("Accord") && year == 2015) { price = Accord2015; }
-        else if (model.equalsIgnoreCase("crv") && year == 2020) { price = CRV2020; }
-        else if (model.equalsIgnoreCase("crv") && year == 2019) { price = CRV2019; }
-        else if (model.equalsIgnoreCase("crv") && year == 2018) { price = CRV2018; }
-        else if (model.equalsIgnoreCase("crv") && year == 2017) { price = CRV2017; }
-        else if (model.equalsIgnoreCase("crv") && year == 2016) { price = CRV2016; }
-        else if (model.equalsIgnoreCase("crv") && year == 2015) { price = CRV2015; }
-        else if (model.equalsIgnoreCase("corolla") && year == 2020) { price = Corolla2020; }
-        else if (model.equalsIgnoreCase("corolla") && year == 2019) { price = Corolla2019; }
-        else if (model.equalsIgnoreCase("corolla") && year == 2018) { price = Corolla2018; }
-        else if (model.equalsIgnoreCase("corolla") && year == 2017) { price = Corolla2017; }
-        else if (model.equalsIgnoreCase("corolla") && year == 2016) { price = Corolla2016; }
-        else if (model.equalsIgnoreCase("corolla") && year == 2015) { price = Corolla2015; }
-        else if (model.equalsIgnoreCase("rav4") && year == 2020) { price = Rav42020; }
-        else if (model.equalsIgnoreCase("rav4") && year == 2019) { price = Rav42019; }
-        else if (model.equalsIgnoreCase("rav4") && year == 2018) { price = Rav42018; }
-        else if (model.equalsIgnoreCase("rav4") && year == 2017) { price = Rav42017; }
-        else if (model.equalsIgnoreCase("rav4") && year == 2016) { price = Rav42016; }
-        else if (model.equalsIgnoreCase("rav4") && year == 2015) { price = Rav42015; }
-        else if (model.equalsIgnoreCase("tundra") && year == 2020) { price = Tundra2020; }
-        else if (model.equalsIgnoreCase("tundra") && year == 2019) { price = Tundra2019; }
-        else if (model.equalsIgnoreCase("tundra") && year == 2018) { price = Tundra2018; }
-        else if (model.equalsIgnoreCase("tundra") && year == 2017) { price = Tundra2017; }
-        else if (model.equalsIgnoreCase("tundra") && year == 2016) { price = Tundra2016; }
-        else if (model.equalsIgnoreCase("tundra") && year == 2015) { price = Tundra2015; }
-        else if (model.equalsIgnoreCase("model 3") && year == 2020) { price = Model32020; }
-        else if (model.equalsIgnoreCase("model 3") && year == 2019) { price = Model32019; }
-        else if (model.equalsIgnoreCase("model 3") && year == 2018) { price = Model32018; }
-        else if (model.equalsIgnoreCase("model 3") && year == 2017) { price = Model32017; }
-        else if (model.equalsIgnoreCase("model s") && year == 2019) { price = ModelS2019; }
-        else if (model.equalsIgnoreCase("model s") && year == 2018) { price = ModelS2018; }
-        else if (model.equalsIgnoreCase("model s") && year == 2017) { price = ModelS2017; }
-        else if (model.equalsIgnoreCase("model s") && year == 2016) { price = ModelS2016; }
-        else if (model.equalsIgnoreCase("model s") && year == 2015) { price = ModelS2015; }
+        if (model.equalsIgnoreCase("Civic") && year == 2019) { price = Civic2019; }
+        if (model.equalsIgnoreCase("Civic") && year == 2018) { price = Civic2018; }
+        if (model.equalsIgnoreCase("Civic") && year == 2017) { price = Civic2017; }
+        if (model.equalsIgnoreCase("Civic") && year == 2016) { price = Civic2016; }
+        if (model.equalsIgnoreCase("Civic") && year == 2015) { price = Civic2015; }
+        if (model.equalsIgnoreCase("Accord") && year == 2020) { price = Accord2020; }
+        if (model.equalsIgnoreCase("Accord") && year == 2019) { price = Accord2019; }
+        if (model.equalsIgnoreCase("Accord") && year == 2018) { price = Accord2018; }
+        if (model.equalsIgnoreCase("Accord") && year == 2017) { price = Accord2017; }
+        if (model.equalsIgnoreCase("Accord") && year == 2016) { price = Accord2016; }
+        if (model.equalsIgnoreCase("Accord") && year == 2015) { price = Accord2015; }
+        if (model.equalsIgnoreCase("crv") && year == 2020) { price = CRV2020; }
+        if (model.equalsIgnoreCase("crv") && year == 2019) { price = CRV2019; }
+        if (model.equalsIgnoreCase("crv") && year == 2018) { price = CRV2018; }
+        if (model.equalsIgnoreCase("crv") && year == 2017) { price = CRV2017; }
+        if (model.equalsIgnoreCase("crv") && year == 2016) { price = CRV2016; }
+        if (model.equalsIgnoreCase("crv") && year == 2015) { price = CRV2015; }
+        if (model.equalsIgnoreCase("corolla") && year == 2020) { price = Corolla2020; }
+        if (model.equalsIgnoreCase("corolla") && year == 2019) { price = Corolla2019; }
+        if (model.equalsIgnoreCase("corolla") && year == 2018) { price = Corolla2018; }
+        if (model.equalsIgnoreCase("corolla") && year == 2017) { price = Corolla2017; }
+        if (model.equalsIgnoreCase("corolla") && year == 2016) { price = Corolla2016; }
+        if (model.equalsIgnoreCase("corolla") && year == 2015) { price = Corolla2015; }
+        if (model.equalsIgnoreCase("rav4") && year == 2020) { price = Rav42020; }
+        if (model.equalsIgnoreCase("rav4") && year == 2019) { price = Rav42019; }
+        if (model.equalsIgnoreCase("rav4") && year == 2018) { price = Rav42018; }
+        if (model.equalsIgnoreCase("rav4") && year == 2017) { price = Rav42017; }
+        if (model.equalsIgnoreCase("rav4") && year == 2016) { price = Rav42016; }
+        if (model.equalsIgnoreCase("rav4") && year == 2015) { price = Rav42015; }
+        if (model.equalsIgnoreCase("tundra") && year == 2020) { price = Tundra2020; }
+        if (model.equalsIgnoreCase("tundra") && year == 2019) { price = Tundra2019; }
+        if (model.equalsIgnoreCase("tundra") && year == 2018) { price = Tundra2018; }
+        if (model.equalsIgnoreCase("tundra") && year == 2017) { price = Tundra2017; }
+        if (model.equalsIgnoreCase("tundra") && year == 2016) { price = Tundra2016; }
+        if (model.equalsIgnoreCase("tundra") && year == 2015) { price = Tundra2015; }
+        if (model.equalsIgnoreCase("model 3") && year == 2020) { price = Model32020; }
+        if (model.equalsIgnoreCase("model 3") && year == 2019) { price = Model32019; }
+        if (model.equalsIgnoreCase("model 3") && year == 2018) { price = Model32018; }
+        if (model.equalsIgnoreCase("model 3") && year == 2017) { price = Model32017; }
+        if (model.equalsIgnoreCase("model s") && year == 2019) { price = ModelS2019; }
+        if (model.equalsIgnoreCase("model s") && year == 2018) { price = ModelS2018; }
+        if (model.equalsIgnoreCase("model s") && year == 2017) { price = ModelS2017; }
+        if (model.equalsIgnoreCase("model s") && year == 2016) { price = ModelS2016; }
+        if (model.equalsIgnoreCase("model s") && year == 2015) { price = ModelS2015; }
+        if (model.equalsIgnoreCase("model x") && year == 2020) { price = ModelX2020; }
+        if (model.equalsIgnoreCase("model x") && year == 2019) { price = ModelX2019; }
+        if (model.equalsIgnoreCase("model x") && year == 2018) { price = ModelX2018; }
+        if (model.equalsIgnoreCase("model x") && year == 2020) { price = ModelX2017; }
+        if (model.equalsIgnoreCase("model x") && year == 2016) { price = ModelX2016; }
         txtAreaReceipt.setText(make + " " + model + "\n" + year + "\n" + "Before Tax: $" + (int)price); 
-
+        if (ComboBoxState != null || ComboBoxState.getSelectedItem().toString().equalsIgnoreCase("Select")) {
+            CBstate();
+        } */
     }//GEN-LAST:event_SliderYearMouseReleased
 
     private void ComboBoxStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxStateActionPerformed
         // TODO add your handling code here:
-        state = ComboBoxState.getSelectedItem().toString();
-        if (state.equalsIgnoreCase("Alabama")) { stateTax = alabama; }
-        else if (state.equalsIgnoreCase("alaska")) { stateTax = alaska; }
-        else if (state.equalsIgnoreCase("arizona")) { stateTax = arizona; }
-        else if (state.equalsIgnoreCase("arkansas")) { stateTax = arkansas; }
-        else if (state.equalsIgnoreCase("california")) { stateTax = california; }
-        else if (state.equalsIgnoreCase("colorado")) { stateTax = colorado; }
-        else if (state.equalsIgnoreCase("connecticut")) { stateTax = connecticut; }
-        else if (state.equalsIgnoreCase("delaware")) { stateTax = delaware; }
-        else if (state.equalsIgnoreCase("florida")) { stateTax = florida; }
-        else if (state.equalsIgnoreCase("georgia")) { stateTax = georgia; }
-        else if (state.equalsIgnoreCase("hawaii")) { stateTax = hawaii; }
-        else if (state.equalsIgnoreCase("idaho")) { stateTax = idaho; }
-        else if (state.equalsIgnoreCase("illinois")) { stateTax = illinois; }
-        else if (state.equalsIgnoreCase("indiana")) { stateTax = indiana; }
-        else if (state.equalsIgnoreCase("iowa")) { stateTax = iowa; }
-        else if (state.equalsIgnoreCase("kansas")) { stateTax = kansas; }
-        else if (state.equalsIgnoreCase("kentucky")) { stateTax = kentucky; }
-        else if (state.equalsIgnoreCase("louisiana")) { stateTax = louisiana; }
-        else if (state.equalsIgnoreCase("main")) { stateTax = maine; }
-        else if (state.equalsIgnoreCase("maryland")) { stateTax = maryland; }
-        else if (state.equalsIgnoreCase("massachusetts")) { stateTax = massachusetts; }
-        else if (state.equalsIgnoreCase("michigan")) { stateTax = michigan; }
-        else if (state.equalsIgnoreCase("minnesota")) { stateTax = minnesota; }
-        else if (state.equalsIgnoreCase("mississippi")) { stateTax = mississippi; }
-        else if (state.equalsIgnoreCase("missouri")) { stateTax = missouri; }
-        else if (state.equalsIgnoreCase("montana")) { stateTax = montana; }
-        else if (state.equalsIgnoreCase("nebraska")) { stateTax = nebraska; }
-        else if (state.equalsIgnoreCase("nevada")) { stateTax = nevada; }
-        else if (state.equalsIgnoreCase("newHampshire")) { stateTax = newHampshire; }
-        else if (state.equalsIgnoreCase("newJersey")) { stateTax = newJersey; }
-        else if (state.equalsIgnoreCase("newMexico")) { stateTax = newMexico; }
-        else if (state.equalsIgnoreCase("newYork")) { stateTax = newYork; }
-        else if (state.equalsIgnoreCase("northCarolina")) { stateTax = northCarolina; }
-        else if (state.equalsIgnoreCase("northDakota")) { stateTax = northDakota; }
-        else if (state.equalsIgnoreCase("ohio")) { stateTax = ohio; }
-        else if (state.equalsIgnoreCase("oklahoma")) { stateTax = oklahoma; }
-        else if (state.equalsIgnoreCase("oregon")) { stateTax = oregon; }
-        else if (state.equalsIgnoreCase("pennsylvania")) { stateTax = pennsylvania; }
-        else if (state.equalsIgnoreCase("rhodeIsland")) { stateTax = rhodeIsland; }
-        else if (state.equalsIgnoreCase("southCarolina")) { stateTax = southCarolina; }
-        else if (state.equalsIgnoreCase("southDakota")) { stateTax = southDakota; }
-        else if (state.equalsIgnoreCase("tennessee")) { stateTax = tennessee; }
-        else if (state.equalsIgnoreCase("texas")) { stateTax = texas; }
-        else if (state.equalsIgnoreCase("utah")) { stateTax = utah; }
-        else if (state.equalsIgnoreCase("vermont")) { stateTax = vermont; }
-        else if (state.equalsIgnoreCase("virginia")) { stateTax = virginia; }
-        else if (state.equalsIgnoreCase("washington")) { stateTax = washington; }
-        else if (state.equalsIgnoreCase("westVirginia")) { stateTax = westVirginia; }
-        else if (state.equalsIgnoreCase("wisconsin")) { stateTax = wisconsin; }
-        else if (state.equalsIgnoreCase("wyoming")) { stateTax = wyoming; }
-        else if (state.equalsIgnoreCase("washington DC")) { stateTax = washingtonDC; }
-        tax = (Math.round((stateTax * price) * 100.0) / 100.0);
-        total = (Math.round((price + tax) * 100.0) / 100.0);
-        txtAreaReceipt.setText(make + " " + model + "\n" + year + "\n" + "Before Tax: $" + (int)price + "\nState: " + state + "\nTax Rate: " + 
-                (Math.round((stateTax * 100.0) * 100.0) / 100.0) + "%\nTax: $" + tax + "\nTotal: $" + total);
+        CBstate();
+        
     }//GEN-LAST:event_ComboBoxStateActionPerformed
-
+    
     
     /**
      * @param args the command line arguments
@@ -387,7 +474,10 @@ public class CarSaleGUI extends javax.swing.JFrame {
     String car3 = " ";
     String make,model,state;
     int year;
-    double stateTax,total,price,tax;
+    double stateTax = 0.0;
+    double total = 0.0;
+    double price = 0.0;
+    double tax = 0.0;
     //CAR PRICE DECLARATIONS
     double Civic2020 = 20950.0; //HONDA - CIVICS
     double Civic2019 = 19550.0;
@@ -447,7 +537,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
     double california = 0.0856;          //C
     double colorado = 0.0763;
     double connecticut = 0.0635;
-    double delaware = 1.0;               //D
+    double delaware = 0.0;               //D
     double florida = 0.0705;             //F
     double georgia = 0.0729;             //G
     double hawaii = 0.0441;              //H
@@ -465,10 +555,10 @@ public class CarSaleGUI extends javax.swing.JFrame {
     double minnesota = 0.0743;
     double mississippi = 0.0707;
     double missouri = 0.0813;
-    double montana = 1.0;
+    double montana = 0.0;
     double nebraska = 0.0685;            //N
     double nevada = 0.0814;
-    double newHampshire = 1.0;
+    double newHampshire = 0.0;
     double newJersey = 0.066;
     double newMexico = 0.0782;
     double newYork = 0.0849;
@@ -476,7 +566,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
     double northDakota = 0.0685;
     double ohio = 0.0717;                //O
     double oklahoma = 0.0892;
-    double oregon = 1.0;
+    double oregon = 0.0;
     double pennsylvania = 0.0634;        //P
     double rhodeIsland = 0.07;           //R
     double southCarolina = 0.0743;       //S
@@ -491,6 +581,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
     double wisconsin = 0.0544;
     double wyoming = 0.0536;
     double washingtonDC = 0.06;
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxMake;
     private javax.swing.JComboBox<String> ComboBoxModel;
