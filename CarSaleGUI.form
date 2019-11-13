@@ -146,6 +146,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ComboBoxMakeMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ComboBoxMakeActionPerformed"/>
           </Events>
           <AuxValues>
@@ -306,7 +307,7 @@
                 <StringItem index="51" value="Washington DC"/>
               </StringArray>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="If year was changed AFTER state selection, please reselect the state"/>
+            <Property name="toolTipText" type="java.lang.String" value="Select your state"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ComboBoxStateActionPerformed"/>
