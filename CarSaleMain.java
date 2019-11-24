@@ -15,11 +15,22 @@ public class CarSaleMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        String h = "honk";
+        switch(h) {
+            case "honk":
+                System.out.println("honk");
+                
+            case "boof":
+                
+            
+            
+        }
+        /**
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CarSaleGUI().setVisible(true);
-            }
-        });
+            } 
+        }); */
     }
     
 }

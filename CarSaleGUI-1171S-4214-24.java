@@ -1,7 +1,3 @@
-
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,7 +6,7 @@ import javax.swing.JComboBox;
 
 /**
  *
- * @author antonio
+ * @author anton
  */
 public class CarSaleGUI extends javax.swing.JFrame {
     /**
@@ -19,6 +15,8 @@ public class CarSaleGUI extends javax.swing.JFrame {
     public CarSaleGUI() {
         initComponents();
     }
+    //private String[] HondaModels = {"Accord", "Civic", "CRV"};
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,7 +31,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
         LabelTitle = new javax.swing.JLabel();
         ComboBoxMake = new javax.swing.JComboBox<>();
         LabelMakeSelection = new javax.swing.JLabel();
-        ComboBoxModels = new javax.swing.JComboBox<>();
+        ComboBoxModel = new javax.swing.JComboBox<>();
         LabelModel = new javax.swing.JLabel();
         SliderYear = new javax.swing.JSlider();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -43,27 +41,6 @@ public class CarSaleGUI extends javax.swing.JFrame {
         LabelState = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                formFocusGained(evt);
-            }
-        });
-
-        jPanel1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jPanel1FocusGained(evt);
-            }
-        });
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel1MouseEntered(evt);
-            }
-        });
-        jPanel1.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                jPanel1ComponentShown(evt);
-            }
-        });
 
         LabelTitle.setFont(new java.awt.Font("DialogInput", 3, 58)); // NOI18N
         LabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -71,7 +48,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
         LabelTitle.setText("CAR SALE");
 
         ComboBoxMake.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        ComboBoxMake.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Honda", "Toyota", "Tesla" }));
+        ComboBoxMake.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Honda", "Toyota", "Tesla" }));
         ComboBoxMake.setToolTipText("Double Click Please");
         ComboBoxMake.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ComboBoxMake.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -90,19 +67,19 @@ public class CarSaleGUI extends javax.swing.JFrame {
         LabelMakeSelection.setLabelFor(ComboBoxMake);
         LabelMakeSelection.setText("Make Selection");
 
-        ComboBoxModels.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        ComboBoxModels.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Accord", "Civic", "CRV" }));
-        ComboBoxModels.setToolTipText("");
-        ComboBoxModels.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ComboBoxModels.addActionListener(new java.awt.event.ActionListener() {
+        ComboBoxModel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        ComboBoxModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select" }));
+        ComboBoxModel.setToolTipText("");
+        ComboBoxModel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ComboBoxModel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBoxModelsActionPerformed(evt);
+                ComboBoxModelActionPerformed(evt);
             }
         });
 
         LabelModel.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         LabelModel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelModel.setLabelFor(ComboBoxModels);
+        LabelModel.setLabelFor(ComboBoxModel);
         LabelModel.setText("Model Selection");
 
         SliderYear.setMajorTickSpacing(1);
@@ -121,15 +98,10 @@ public class CarSaleGUI extends javax.swing.JFrame {
 
         txtAreaReceipt.setEditable(false);
         txtAreaReceipt.setColumns(20);
-        txtAreaReceipt.setFont(new java.awt.Font("Dialog", 0, 78)); // NOI18N
+        txtAreaReceipt.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
         txtAreaReceipt.setLineWrap(true);
-        txtAreaReceipt.setRows(7);
+        txtAreaReceipt.setRows(10);
         txtAreaReceipt.setToolTipText("Have fun with your new car!");
-        txtAreaReceipt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                txtAreaReceiptMouseEntered(evt);
-            }
-        });
         jScrollPane1.setViewportView(txtAreaReceipt);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
@@ -137,9 +109,8 @@ public class CarSaleGUI extends javax.swing.JFrame {
         jLabel1.setText("Receipt");
 
         ComboBoxState.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        ComboBoxState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", "Washington DC" }));
+        ComboBoxState.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", "Washington DC" }));
         ComboBoxState.setToolTipText("Select your state");
-        ComboBoxState.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ComboBoxState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboBoxStateActionPerformed(evt);
@@ -170,7 +141,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
                                     .addComponent(LabelMakeSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ComboBoxModels, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ComboBoxModel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(ComboBoxMake, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(SliderYear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -197,7 +168,7 @@ public class CarSaleGUI extends javax.swing.JFrame {
                         .addGap(42, 42, 42)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelModel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ComboBoxModels, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ComboBoxModel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(75, 75, 75)
                         .addComponent(SliderYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(84, 84, 84)
@@ -223,106 +194,107 @@ public class CarSaleGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private static double roundTax(double num) {
-        num = (Math.round((num) * 100.0) / 100.0);
+        num = (Math.round((num * 100.0) * 100.0) / 100.0);
         return num;
     }
-    private void all() {
-        CBmodel();
-        YearSlide();
-        CBstate();
-    }
     private void CBchange() {
-        ComboBoxModels.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {car1, car2, car3}));
-    /*    
         ComboBoxModel.removeAllItems();
+        ComboBoxModel.addItem("Select");
         ComboBoxModel.addItem(car1);
         ComboBoxModel.addItem(car2);
-        ComboBoxModel.addItem(car3);     
-    */
-    }
+        ComboBoxModel.addItem(car3);
+        }
     private void CBstate(){
         state = ComboBoxState.getSelectedItem().toString();
-        switch (state) {
-        case ("Alaska"): stateTax = alaska; break;
-        case ("Arizona"): stateTax = arizona; break;
-        case ("Arkansas"): stateTax = arkansas; break;
-        case ("California"): stateTax = california; break;
-        case ("Colorado"): stateTax = colorado; break;
-        case ("Connecticut"): stateTax = connecticut; break;
-        case ("Delaware"): stateTax = delaware; break;
-        case ("Florida"): stateTax = florida; break;
-        case ("Georgia"): stateTax = georgia; break;
-        case ("Hawaii"): stateTax = hawaii; break;
-        case ("Idaho"): stateTax = idaho; break;
-        case ("Illinois"): stateTax = illinois; break;
-        case ("Indiana"): stateTax = indiana; break;
-        case ("Iowa"): stateTax = iowa; break;
-        case ("Kansas"): stateTax = kansas; break;
-        case ("Kentucky"): stateTax = kentucky; break;
-        case ("Louisiana"): stateTax = louisiana; break;
-        case ("Maine"): stateTax = maine; break;
-        case ("Maryland"): stateTax = maryland; break;
-        case ("Massachusetts"): stateTax = massachusetts; break;
-        case ("Michigan"): stateTax = michigan; break;
-        case ("minnesota"): stateTax = minnesota; break;
-        case ("Mississippi"): stateTax = mississippi; break;
-        case ("missouri"): stateTax = missouri; break;
-        case ("Montana"): stateTax = montana; break;
-        case ("Nebraska"): stateTax = nebraska; 
-        case ("Nevada"): stateTax = nevada; break;
-        case ("New Hampshire"): stateTax = newHampshire; break;
-        case ("New Jersey"): stateTax = newJersey; break;
-        case ("New Mexico"): stateTax = newMexico; break;
-        case ("New York"): stateTax = newYork; break;
-        case ("North Carolina"): stateTax = northCarolina; break;
-        case ("North Dakota"): stateTax = northDakota; break;
-        case ("Ohio"): stateTax = ohio; break;
-        case ("Oklahoma"): stateTax = oklahoma; break;
-        case ("Oregon"): stateTax = oregon; break;
-        case ("Pennsylvania"): stateTax = pennsylvania; break;
-        case ("Rhode Island"): stateTax = rhodeIsland; break;
-        case ("South Carolina"): stateTax = southCarolina; break;
-        case ("South Dakota"): stateTax = southDakota; break;
-        case ("Tennessee"): stateTax = tennessee; break;
-        case ("Texas"): stateTax = texas; break;
-        case ("Utah"): stateTax = utah; break;
-        case ("Vermont"): stateTax = vermont; break;
-        case ("Virginia"): stateTax = virginia; break;
-        case ("Washington"): stateTax = washington; break;
-        case ("West Virginia"): stateTax = westVirginia; break;
-        case ("Wisconsin"): stateTax = wisconsin; break;
-        case ("Wyoming"): stateTax = wyoming; break;
-        case ("Washington DC"): stateTax = washingtonDC; break;
-        default:
-            stateTax = alabama;
-            break; }
-        tax = roundTax(stateTax * price);
+        if (state.equalsIgnoreCase("Alabama")) { stateTax = alabama; }
+        if (state.equalsIgnoreCase("alaska")) { stateTax = alaska; }
+        if (state.equalsIgnoreCase("arizona")) { stateTax = arizona; }
+        if (state.equalsIgnoreCase("arkansas")) { stateTax = arkansas; }
+        if (state.equalsIgnoreCase("california")) { stateTax = california; }
+        if (state.equalsIgnoreCase("colorado")) { stateTax = colorado; }
+        if (state.equalsIgnoreCase("connecticut")) { stateTax = connecticut; }
+        if (state.equalsIgnoreCase("delaware")) { stateTax = delaware; }
+        if (state.equalsIgnoreCase("florida")) { stateTax = florida; }
+        if (state.equalsIgnoreCase("georgia")) { stateTax = georgia; }
+        if (state.equalsIgnoreCase("hawaii")) { stateTax = hawaii; }
+        if (state.equalsIgnoreCase("idaho")) { stateTax = idaho; }
+        if (state.equalsIgnoreCase("illinois")) { stateTax = illinois; }
+        if (state.equalsIgnoreCase("indiana")) { stateTax = indiana; }
+        if (state.equalsIgnoreCase("iowa")) { stateTax = iowa; }
+        if (state.equalsIgnoreCase("kansas")) { stateTax = kansas; }
+        if (state.equalsIgnoreCase("kentucky")) { stateTax = kentucky; }
+        if (state.equalsIgnoreCase("louisiana")) { stateTax = louisiana; }
+        if (state.equalsIgnoreCase("main")) { stateTax = maine; }
+        if (state.equalsIgnoreCase("maryland")) { stateTax = maryland; }
+        if (state.equalsIgnoreCase("massachusetts")) { stateTax = massachusetts; }
+        if (state.equalsIgnoreCase("michigan")) { stateTax = michigan; }
+        if (state.equalsIgnoreCase("minnesota")) { stateTax = minnesota; }
+        if (state.equalsIgnoreCase("mississippi")) { stateTax = mississippi; }
+        if (state.equalsIgnoreCase("missouri")) { stateTax = missouri; }
+        if (state.equalsIgnoreCase("montana")) { stateTax = montana; }
+        if (state.equalsIgnoreCase("nebraska")) { stateTax = nebraska; }
+        if (state.equalsIgnoreCase("nevada")) { stateTax = nevada; }
+        if (state.equalsIgnoreCase("newHampshire")) { stateTax = newHampshire; }
+        if (state.equalsIgnoreCase("newJersey")) { stateTax = newJersey; }
+        if (state.equalsIgnoreCase("newMexico")) { stateTax = newMexico; }
+        if (state.equalsIgnoreCase("newYork")) { stateTax = newYork; }
+        if (state.equalsIgnoreCase("northCarolina")) { stateTax = northCarolina; }
+        if (state.equalsIgnoreCase("northDakota")) { stateTax = northDakota; }
+        if (state.equalsIgnoreCase("ohio")) { stateTax = ohio; }
+        if (state.equalsIgnoreCase("oklahoma")) { stateTax = oklahoma; }
+        if (state.equalsIgnoreCase("oregon")) { stateTax = oregon; }
+        if (state.equalsIgnoreCase("pennsylvania")) { stateTax = pennsylvania; }
+        if (state.equalsIgnoreCase("rhodeIsland")) { stateTax = rhodeIsland; }
+        if (state.equalsIgnoreCase("southCarolina")) { stateTax = southCarolina; }
+        if (state.equalsIgnoreCase("southDakota")) { stateTax = southDakota; }
+        if (state.equalsIgnoreCase("tennessee")) { stateTax = tennessee; }
+        if (state.equalsIgnoreCase("texas")) { stateTax = texas; }
+        if (state.equalsIgnoreCase("utah")) { stateTax = utah; }
+        if (state.equalsIgnoreCase("vermont")) { stateTax = vermont; }
+        if (state.equalsIgnoreCase("virginia")) { stateTax = virginia; }
+        if (state.equalsIgnoreCase("washington")) { stateTax = washington; }
+        if (state.equalsIgnoreCase("westVirginia")) { stateTax = westVirginia; }
+        if (state.equalsIgnoreCase("wisconsin")) { stateTax = wisconsin; }
+        if (state.equalsIgnoreCase("wyoming")) { stateTax = wyoming; }
+        if (state.equalsIgnoreCase("washington DC")) { stateTax = washingtonDC; }
+        tax = roundTax(stateTax);
         total = (Math.round((price + tax) * 100.0) / 100.0); 
-        txtAreaReceipt.setText(make + s + model + n + year + n + state + n + "Before Tax: $" + (int)price + "\nTax Rate: " 
-        + roundTax(stateTax * 100) + "%\nTax: $" + tax + n + "Total: $" + total); }
+        if (state != null && state.equalsIgnoreCase("Select") == false && make != null && make.equalsIgnoreCase("Select") == false 
+                && model != null && model.equalsIgnoreCase("Select") == false && year != 0) {
+            txtAreaReceipt.setText(make + " " + model + "\n" + year + "\n" + "Before Tax: $" + (int)price + "\nState: " + state + "\nTax Rate: " + 
+                (Math.round((stateTax * 100.0) * 100.0) / 100.0) + "%\nTax: $" + tax + "\nTotal: $" + total);
+        }
+        else if (state == null || state.equalsIgnoreCase("Select") || make == null || make.equalsIgnoreCase("select") || year == 0) {
+            txtAreaReceipt.setText("Tax Rate: " + tax + "%");
+        }
+        }
     private void CBmodel()  {
         make = ComboBoxMake.getSelectedItem().toString();
-        switch(make) {
-        case("Toyota"): 
-            car1 = "Corolla";
-            car2 = "Rav4";
-            car3 = "Tundra";
-            CBchange(); 
-            break;
-        case ("Tesla"):
-            car1 = "Model 3";
-            car2 = "Model S";
-            car3 = "Model X";
-            CBchange();
-            break; 
-        default:
+        if (make.equalsIgnoreCase("Honda")) {
             car1 = "Accord";
             car2 = "Civic";
             car3 = "CRV";
-            CBchange();
-            break;} }
+            CBchange(); }
+        if (make.equalsIgnoreCase("Toyota")) {
+            car1 = "Corolla";
+            car2 = "Rav4";
+            car3 = "Tundra";
+            CBchange(); }
+        if (make.equalsIgnoreCase("Tesla")) {
+            car1 = "Model 3";
+            car2 = "Model S";
+            car3 = "Model X";
+            CBchange();}
+        if (make.equalsIgnoreCase("Select")) {
+            txtAreaReceipt.setText(""); }
+        else {
+            txtAreaReceipt.setText(make); }
+        }
     private void YearSlide(){
         year = SliderYear.getValue();
+        if (make == null || model == null) {
+            txtAreaReceipt.setText("");
+        }
         if (model.equalsIgnoreCase("Civic") && year == 2020) { price = Civic2020; }
         if (model.equalsIgnoreCase("Civic") && year == 2019) { price = Civic2019; }
         if (model.equalsIgnoreCase("Civic") && year == 2018) { price = Civic2018; }
@@ -372,60 +344,50 @@ public class CarSaleGUI extends javax.swing.JFrame {
         if (model.equalsIgnoreCase("model x") && year == 2019) { price = ModelX2019; }
         if (model.equalsIgnoreCase("model x") && year == 2018) { price = ModelX2018; }
         if (model.equalsIgnoreCase("model x") && year == 2020) { price = ModelX2017; }
-        if (model.equalsIgnoreCase("model x") && year == 2016) { price = ModelX2016; } }
+        if (model.equalsIgnoreCase("model x") && year == 2016) { price = ModelX2016; }
+        txtAreaReceipt.setText(make + " " + model + "\n" + year + "\n" + "Before Tax: $" + (int)price); 
+        if (ComboBoxState.getSelectedItem() != null || ComboBoxState.getSelectedItem().toString().equalsIgnoreCase("Select") == false) {
+            CBstate();
+        }
+    }
     private void ComboBoxMakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxMakeActionPerformed
         // TODO add your handling code here:
-        all();
+        CBmodel();
     }//GEN-LAST:event_ComboBoxMakeActionPerformed
     
-    private void ComboBoxModelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxModelsActionPerformed
+    private void ComboBoxModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxModelActionPerformed
         // TODO add your handling code here: 
-        model = ComboBoxModels.getSelectedItem().toString(); 
+        model = ComboBoxModel.getSelectedItem().toString(); 
         if (model.equalsIgnoreCase("Model S")) { SliderYear.setMaximum(2019); SliderYear.setMinimum(2015); }
-        if (model.equalsIgnoreCase("Model X")) { SliderYear.setMinimum(2016); SliderYear.setMaximum(2020); }
-        if (model.equalsIgnoreCase("Model 3")) {
-            SliderYear.setMinimum(2017); SliderYear.setMaximum(2020);} 
+        else if (model.equalsIgnoreCase("Model X")) { SliderYear.setMinimum(2016); SliderYear.setMaximum(2020); }
+        else if (model.equalsIgnoreCase("Model 3")) {
+            SliderYear.setMinimum(2017); SliderYear.setMaximum(2020);}
+        else if (model.equalsIgnoreCase("Select")) {
+            txtAreaReceipt.setText(make); SliderYear.setMinimum(2015); SliderYear.setMaximum(2020);}
         else {
+            txtAreaReceipt.setText(make + " " + model); 
             SliderYear.setMaximum(2020);
             SliderYear.setMinimum(2015);} 
-        all(); 
-    }//GEN-LAST:event_ComboBoxModelsActionPerformed
+        if (model.equalsIgnoreCase("Select") && make != null && make.equalsIgnoreCase("Select") == false) {
+            txtAreaReceipt.setText("make");
+            CBstate();
+            YearSlide();
+        }
+    }//GEN-LAST:event_ComboBoxModelActionPerformed
 
     private void SliderYearMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SliderYearMouseReleased
         // TODO add your handling code here:
-        all(); 
+        YearSlide();
     }//GEN-LAST:event_SliderYearMouseReleased
 
     private void ComboBoxStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxStateActionPerformed
         // TODO add your handling code here:
-        all();
+        CBstate();
     }//GEN-LAST:event_ComboBoxStateActionPerformed
 
     private void ComboBoxMakeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComboBoxMakeMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBoxMakeMouseClicked
-
-    private void jPanel1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPanel1FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel1FocusGained
-
-    private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formFocusGained
-
-    private void jPanel1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentShown
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel1ComponentShown
-
-    private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
-        // TODO add your handling code here:
-        //all();
-    }//GEN-LAST:event_jPanel1MouseEntered
-
-    private void txtAreaReceiptMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAreaReceiptMouseEntered
-        // TODO add your handling code here:
-        all();
-    }//GEN-LAST:event_txtAreaReceiptMouseEntered
     
     /**
      * @param args the command line arguments
@@ -464,11 +426,8 @@ public class CarSaleGUI extends javax.swing.JFrame {
     String car1 = " ";
     String car2 = " ";
     String car3 = " ";
-    String s = " ";
-    String n = "\n";
     String make,model,state;
     int year = 0;
-    int c = 1;
     double num = 0.0;
     double stateTax = 0.0;
     double total = 0.0;
@@ -577,15 +536,10 @@ public class CarSaleGUI extends javax.swing.JFrame {
     double wisconsin = 0.0544;
     double wyoming = 0.0536;
     double washingtonDC = 0.06;
-    private DefaultComboBoxModel <String> modModels;
-    private JComboBox<String> ComboBoxModel; //property of the combobox, models is the actual combobox
-    private String[] HondaModels = {"Accord", "Civic", "CRV"};
-    private String[] ToyotaModels = {"Corolla", "Rav4", "Tundra"};
-    private String[] TeslaModels = {"Model 3", "Model S", "Model X"};
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxMake;
-    private javax.swing.JComboBox<String> ComboBoxModels;
+    private javax.swing.JComboBox<String> ComboBoxModel;
     private javax.swing.JComboBox<String> ComboBoxState;
     private javax.swing.JLabel LabelMakeSelection;
     private javax.swing.JLabel LabelModel;

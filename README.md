@@ -1,8 +1,13 @@
-# CarSaleGUI built on NetBeans 11.2 and Java SE 13
- This is an attempt at in interface to do everything someone needs to do for a car. The first combo box is for the make and updates the second combo box based on the selection. So far the first combo box needs a double click to function properly but the second does not. After each selection, a summary text area is updated to show the user what they have selected so far. This includes the slider to select the year of the car. I tried to make an array to update the list of items on the combo box but could not figure it out yet, maybe later on a seperate commit. The math behind all of this is quite repetitive, because we need a set value for each car and each year of that car, along with (this is the plan) the tax rate for all 50 states. So far I have just been adding basics to the GUI but I'll make it prettier closer to build time. I did the universal declarations at the bottom near the untouchables and it seems to be working so far. I just initialize it and update the value in the action methods. So for example, I created String make; and then in the ComboBoxMake method I did make = ComboBoxMake.getSelected().toString();
+READ ME FOR CAR SALE GUI BY ANTONIO ROMEU
 
-I added the tax rates for all fifty states and initialized all the car makes and models, all that is left is to add the values for each car. After that just do the math to calculate it out, and tidy up the GUI. Also I am thinking of adding a depreciation calulator to this, using a negative compound interest formula. Also still haven't figured out the arrays on the combobox but I feel like at this point it's a little too late.
 
-I added the values for the cars and prices in general now.
 
-Comments or suggestions to antonio.r.romeu@gmail.com
+I tried adding arrays in and I correctly defined them and everything and my teacher helped me add them into 
+the ComboBox but I am now having trouble getting the all(); function to execute properly outside of ComboBoxModel.
+I tried commenting out the all(); functins for a couple of the functions but it doesn't seem to work, as well as I can't seem to figure out
+how to get rid of the old functions I used to test out some of the always executing functions, and I ended up going with mouse entered functions
+for both the panel and the txtAreaReceipt so it executed every time the mouse moved basically, as a way of getting it to calculate on startup and to 
+keep on executing. Maybe I could try a Thread.sleep(400); or something, that way it isn't so intensive on the computer. But that would still need some
+sort of input from the user, whether it be a mouse movement or what, but that's what I'm trying to eliminate.
+
+Anyways, this is the current state of the file, not so great. But if you have any suggestions, email them to me: antonio.r.romeu@gmail.com
